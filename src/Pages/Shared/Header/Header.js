@@ -8,8 +8,7 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const navigation = [
-    { name: 'Products', to: '/products', current: false },
-    { name: 'Manage Plans', to: '/managePlans', current: false },
+    { name: 'Dashboard', to: '/dashboard', current: false },
     { name: 'Add Plans', to: '/addPlans', current: false },
 ]
 
@@ -59,6 +58,13 @@ const Header = () => {
                                                 className='text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                                             >
                                                 Home
+                                            </Link>
+                                            <Link
+                                                key="Home"
+                                                to="/products"
+                                                className='text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                            >
+                                                Products
                                             </Link>
                                             {user?.email && navigation.map((item) => (
                                                 <Link

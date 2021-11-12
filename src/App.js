@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider';
 import AllProducts from './Pages/AllProducts/AllProducts';
 import BuyProduct from './Pages/BuyProduct/BuyProduct';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
@@ -41,6 +42,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
