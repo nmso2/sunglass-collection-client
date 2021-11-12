@@ -4,6 +4,7 @@ import AuthProvider from './context/AuthProvider';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
+import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/signup">
+              <SignUp></SignUp>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
