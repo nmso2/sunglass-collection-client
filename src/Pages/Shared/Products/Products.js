@@ -31,11 +31,10 @@ const Products = (props) => {
                 </footer>
 
 
-                <Link to={`/tourPlans/${_id}`}><button type="button" className="mb-10 focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-500 hover:bg-yellow-600 hover:shadow-lg">Buy Now</button>
+                <Link to={`/sunglass/${_id}`}><button type="button" className="mb-10 focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-yellow-500 hover:bg-yellow-600 hover:shadow-lg">Buy Now</button>
                 </Link>
 
             </article>
-
         </div>
     );
 };

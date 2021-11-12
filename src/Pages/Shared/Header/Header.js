@@ -8,7 +8,7 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const navigation = [
-    { name: 'My Plans', to: '/myPlans', current: false },
+    { name: 'Products', to: '/products', current: false },
     { name: 'Manage Plans', to: '/managePlans', current: false },
     { name: 'Add Plans', to: '/addPlans', current: false },
 ]
@@ -22,7 +22,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Disclosure as="nav" className="bg-white sticky top-0 z-50">
+            <Disclosure as="nav" className=" bg-blue-100 sticky top-0 z-50">
                 {({ open }) => (
                     <>
                         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -114,10 +114,10 @@ const Header = () => {
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <Link
-                                                            to="/myPlans"
+                                                            to="/myOrders"
                                                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
-                                                            My Plans
+                                                            My Orders
                                                         </Link>
                                                     )}
                                                 </Menu.Item>
@@ -126,8 +126,10 @@ const Header = () => {
                                                         <Link
                                                             to="/"
                                                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                            onClick={logOut}
                                                         >
-                                                            <button onClick={logOut}>Sign out</button>
+                                                            Sign out
+
                                                         </Link>
                                                     )}
                                                 </Menu.Item>
