@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Rating from 'react-rating';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import useProduct from '../../hooks/useProduct';
 
@@ -9,7 +9,9 @@ const BuyProduct = () => {
     const { ID } = useParams();
     const [product] = useProduct(ID);
 
+    const location = useLocation();
     const history = useHistory();
+    const redirect_uri = location.state?.from || '/';
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -30,7 +32,7 @@ const BuyProduct = () => {
                 if (result.insertedId) {
                     alert('Order processed Successfully!');
                     reset();
-                    history.goBack();
+                    history.push(redirect_uri);
                 }
             })
     }

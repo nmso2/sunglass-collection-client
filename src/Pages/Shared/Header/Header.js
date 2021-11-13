@@ -59,7 +59,7 @@ const Header = () => {
                                                 Home
                                             </Link>
                                             <Link
-                                                key="Home"
+                                                key="products"
                                                 to="/products"
                                                 className='text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                                             >
@@ -155,6 +155,13 @@ const Header = () => {
                                     className='text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'
                                 >
                                     Home
+                                </Link>
+                                <Link
+                                    key="products"
+                                    to="/products"
+                                    className='text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                >
+                                    Products
                                 </Link>
                                 {navigation.map((item) => (
                                     <Link
