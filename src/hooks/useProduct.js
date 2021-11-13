@@ -5,7 +5,7 @@ const useProduct = (id) => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/sunglass/${id}`)
+        fetch(`https://sunglass-collection.herokuapp.com/sunglass/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
         // eslint-disable-next-line

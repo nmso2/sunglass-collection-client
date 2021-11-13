@@ -7,7 +7,7 @@ const useCancelOrder = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/purchaseSunglass?email=${user.email}`)
+        fetch(`https://sunglass-collection.herokuapp.com/purchaseSunglass?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [user.email]);
@@ -15,7 +15,7 @@ const useCancelOrder = () => {
     const handleCancelOrder = id => {
         const proceed = window.confirm('Are you sure, you want to cancel?')
         if (proceed) {
-            const url = `http://localhost:5000/purchaseSunglass/${id}`
+            const url = `https://sunglass-collection.herokuapp.com/purchaseSunglass/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

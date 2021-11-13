@@ -16,7 +16,7 @@ const BuyProduct = () => {
     const onSubmit = data => {
         data.sunglass_id = ID;
         data.confirmed = false;
-        fetch('http://localhost:5000/purchaseSunglass', {
+        fetch('https://sunglass-collection.herokuapp.com/purchaseSunglass', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const BuyProduct = () => {
                         fullSymbol="fas fa-star text-warning"
                     /></p>
                     <p className="text-3xl">Price: {product?.price} &#2547;</p>
-                    
+
                     <p className="max-w-2xl text-lg">{product?.details}</p>
                 </div>
 

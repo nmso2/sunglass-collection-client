@@ -16,7 +16,7 @@ const ManageOrder = (props) => {
     //-------------------------------------
     const handleUpdateOrder = e => {
         order.confirmed = true;
-        const url = `http://localhost:5000/purchaseSunglass/${order._id}`
+        const url = `https://sunglass-collection.herokuapp.com/purchaseSunglass/${order._id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -63,8 +63,8 @@ const ManageOrder = (props) => {
                     </AccordionItem>
                 </Accordion>
                 {
-                        !order.confirmed && <button className="border border-blue-500 text-blue-500 rounded-md px-5 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-blue-600 focus:outline-none focus:shadow-outline lg:hidden" onClick={handleUpdateOrder}>Confirm Order</button>
-                    }
+                    !order.confirmed && <button className="border border-blue-500 text-blue-500 rounded-md px-5 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-blue-600 focus:outline-none focus:shadow-outline lg:hidden" onClick={handleUpdateOrder}>Confirm Order</button>
+                }
                 <button className="border border-red-500 text-red-500 rounded-md px-5 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-red-600 focus:outline-none focus:shadow-outline lg:hidden" onClick={() => handleCancelOrders(order._id)}>Calcel Order</button>
             </div>)}
             <hr />

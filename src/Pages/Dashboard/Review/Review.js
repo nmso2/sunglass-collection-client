@@ -5,10 +5,10 @@ const Review = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const {user} = useAuth();
+    const { user } = useAuth();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/review', {
+        fetch('https://sunglass-collection.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

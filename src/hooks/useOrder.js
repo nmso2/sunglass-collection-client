@@ -5,7 +5,7 @@ const useOrder = (id) => {
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchaseSunglass/${id}`)
+        fetch(`https://sunglass-collection.herokuapp.com/purchaseSunglass/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, []);
