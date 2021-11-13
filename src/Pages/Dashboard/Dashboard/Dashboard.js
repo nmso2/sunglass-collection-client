@@ -6,16 +6,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import {
     Switch,
     Route,
@@ -23,7 +19,6 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
-import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import Pay from '../Pay/Pay';
@@ -51,19 +46,29 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             {
-                admin ? <Box>
-                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none', color: 'white' }} ><Button style={{ backgroundColor: '#5CE7ED', marginBottom: 25 }} color="inherit">Make Admin</Button></Link><br />
+                admin ? <List>
+                    {[<Link to='/' style={{ textDecoration: 'none', color: 'black' }} >Home</Link>,
 
-                    <Link to={`${url}/addProduct`} style={{ textDecoration: 'none', color: 'white' }} ><Button style={{ backgroundColor: '#5CE7ED', marginBottom: 25 }} color="inherit">Add A Product</Button></Link>
-                </Box> : <List>
-                    {[<Link to={`${url}/pay`} style={{ textDecoration: 'none', color: 'black' }} >Pay</Link>,
+                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none', color: 'black' }} >Make Admin</Link>,
+
+                    <Link to={`${url}/addProduct`} style={{ textDecoration: 'none', color: 'black' }} >Add A Product</Link>,
+
+                    <Link to='/' style={{ textDecoration: 'none', color: 'black' }} onClick={logOut} >Logout</Link>].map((text) => (
+                        <ListItem key={text}>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    ))}
+                </List> : <List>
+                    {[<Link to='/' style={{ textDecoration: 'none', color: 'black' }} >Home</Link>,
+
+                    <Link to={`${url}/pay`} style={{ textDecoration: 'none', color: 'black' }} >Pay</Link>,
 
                     <Link to={`${url}/myOrders`} style={{ textDecoration: 'none', color: 'black' }} >My Orders</Link>,
 
                     <Link to={`${url}/review`} style={{ textDecoration: 'none', color: 'black' }} >Review</Link>,
 
                     <Link to='/' style={{ textDecoration: 'none', color: 'black' }} onClick={logOut} >Logout</Link>].map((text) => (
-                        <ListItem button key={text}>
+                        <ListItem key={text}>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}

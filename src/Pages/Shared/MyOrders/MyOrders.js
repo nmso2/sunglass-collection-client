@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 import useCancelOrder from '../../../hooks/useCancelOrder';
 import MyOrder from '../MyOrder/MyOrder';
 

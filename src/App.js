@@ -9,7 +9,6 @@ import Login from './Pages/Login/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import MyOrders from './Pages/Shared/MyOrders/MyOrders';
-import Products from './Pages/Shared/Products/Products';
 import SignUp from './Pages/SignUp/SignUp';
 import UserProfile from './UserProfile/UserProfile';
 
