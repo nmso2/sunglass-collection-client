@@ -1,13 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Rating from 'react-rating';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import useProduct from '../../hooks/useProduct';
 
 const BuyProduct = () => {
     const { ID } = useParams();
     const [product] = useProduct(ID);
+
+    const history = useHistory();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -28,6 +30,7 @@ const BuyProduct = () => {
                 if (result.insertedId) {
                     alert('Order processed Successfully!');
                     reset();
+                    history.goBack();
                 }
             })
     }
