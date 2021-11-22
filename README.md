@@ -1,6 +1,6 @@
 # Sunglass Collection
 
-Live: [Sunglass Collection](https://github.com/facebook/create-react-app).
+Live: [Sunglass Collection](https://sunglass-collection.web.app).
 
 ## About This Project
 
